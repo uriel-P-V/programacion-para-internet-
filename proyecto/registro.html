@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web site</title>
+	<link rel="stylesheet" href="estilos/style2.css">
+</head>
+
+<body>
+	
+    <header>
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <button class="btnLogin-popup" autofocus>Login</button>
+        </nav>
+    
+    </header>
+
+    <div class="wrapper">
+        
+        
+        
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+       
+        <div class="form-box login" id="login-form" ">
+            <h2>Login</h2>
+            <form action="registro3.php" method="POST">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" name="email2" required>
+                    <label >Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="password2" required>
+                    <label >Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Recordar</label>
+                    <a href="#">Haz olvidado tu contasena?</a>
+                </div>
+                <button type="submit" class="btn" id="login-btn">Login</button>
+                <div id="mensaje"></div>
+                <div class="login-register">
+                    <a href="#" 
+                    class="register-link">No tienes cuesta?</a>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register" id="registro-form">
+            <h2>Registro</h2>
+            <form action="registro2.php" method="POST">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" name="nombre" required>
+                    <label >Nombre de Usuario</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" name="email"required>
+                    <label >Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" name="password" required>
+                    <label >Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" >Estoy deacuerdo con los terminos
+                         y condiciones</label>
+                </div>
+                <button type="submit" class="btn" id="registro-btn">Registro</button>
+                
+                <div id="mensaje"></div>
+                <div class="login-register">
+                    <a href="#" 
+                    class="login-link"><p>Ya tienes una cuenta?</p></a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("registro-btn").addEventListener("click", function() {
+          document.getElementById("mensaje").innerText = "Registro completado.";
+          setTimeout(function() {
+            document.getElementById("mensaje").innerText = "";
+            document.getElementById("registro-form").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+            }, 3000);
+          
+        });
+        
+       /*   document.getElementById("login-btn").addEventListener("click", function() {
+          document.getElementById("mensaje").innerText = "Se ha iniciado sesión correctamente.";
+          setTimeout(function() {
+            document.getElementById("mensaje").innerText = "";
+            window.location.href = "index.html";
+            }, 3000);
+          
+        });  */
+        </script>
+        
+
+    <script src="js/java.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
